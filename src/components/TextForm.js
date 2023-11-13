@@ -27,17 +27,17 @@ export default function TextForm(props) {
     
   return (
     <>
-    <div>
+    <div className='container' style={{color: props.mode === 'dark'?'white':'dark'}}>
         <h1>{props.heading}</h1>
         <div className="form-group container">
-            <textarea className="form-control" value={Text} style={{color : Color}} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+            <textarea className="form-control" value={Text} onChange={handleOnChange} style={{color : Color, backgroundColor:props.mode === 'dark'?'grey':'white'}} id="myBox" rows="8"></textarea>
         </div>
         <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
         <button className="btn btn-primary mx-1" onClick={handleLowClick}>Convert to Lowercase</button>
         <button className="btn btn-primary mx-1" onClick={handleColor}>Change Color</button>    
 
     </div>
-    <div className="container">
+    <div className="container" style={{color: props.mode === 'dark'?'white':'dark'}}>
         <h1>Your Text Summary</h1>
         <p>{Text.split(" ").length} words and {Text.length} characters</p>
         <p>{0.008 * Text.split(" ").length} Minutes Required To Read</p>
