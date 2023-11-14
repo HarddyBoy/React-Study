@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
@@ -28,6 +28,17 @@ export default function Navbar(props) {
       <input className="form-check-input" onClick={props.toggleMode}  role="switch"  type="checkbox" id="flexSwitchCheckDefault" />
       <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
     </div>
+
+    {/* <div className={`form-check form-switch text-${props.mode === 'light'?'dark':'light'}`}>
+      <input className="form-check-input" onClick={props.toggleRed}  role="switch"  type="checkbox" id="flexSwitchCheckDefault" />
+      <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Red Mode</label>
+    </div>
+
+    <div className={`form-check form-switch text-${props.mode === 'light'?'dark':'light'}`}>
+      <input className="form-check-input" onClick={props.toggleGreen}  role="switch"  type="checkbox" id="flexSwitchCheckDefault" />
+      <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Green Mode</label>
+    </div> */}
+
   </div>
 </nav>
     </div>
