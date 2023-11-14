@@ -4,6 +4,12 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
+import{
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   const[alert, setAlert] = useState(null);
@@ -50,13 +56,19 @@ function App() {
   // }
   return (
     <>
-      <Navbar title="Harddy Reacts" aboutText="About Me" mode={darkMode}  toggleMode={toggleMode}/>
+    <Router>      <Navbar title="Harddy Reacts" aboutText="About Me" mode={darkMode}  toggleMode={toggleMode}/>
       {/* toggleGreen={toggleGreen} toggleRed={toggleRed} */}
       <Alert alert={alert} />
       <div className="container">
-      <TextForm  showAlert={showAlert} heading="Enter the text here" mode={darkMode} />
-      {/* <About /> */}
+      <Routes>
+        
+        <Route exact path="/" element={<TextForm  showAlert={showAlert} heading="Enter the text here" mode={darkMode} />} />
+        <Route exact path="/about" element={<About />} />
+
+      </Routes>
       </div>
+      </Router>
+
     </>
   );
 }
